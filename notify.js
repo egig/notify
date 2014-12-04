@@ -89,7 +89,7 @@
 
             var $this = this;
 
-            containers[this.options.pos].show().prepend(this.element);
+            containers[this.options.pos].css('zIndex', this.options.zIndex).show().prepend(this.element);
 
             var marginbottom = parseInt(this.element.css("margin-bottom"), 10);
 
@@ -171,6 +171,7 @@
         timeout: 5000,
         group: null,
         pos: 'top-center',
+        zIndex: 10400,
         onClose: function() {}
     };
 

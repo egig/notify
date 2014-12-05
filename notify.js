@@ -28,13 +28,6 @@
             }
 
             return (new Message(options)).show();
-        },
-        closeAll  = function(group, instantly){
-            if(group) {
-                for(var id in messages) { if(group===messages[id].group) messages[id].close(instantly); }
-            } else {
-                for(var id in messages) { messages[id].close(instantly); }
-            }
         };
 
     var Message = function(options){
@@ -54,16 +47,12 @@
         ].join('')).data("notifyMessage", this);
 
         // status
-        if (this.options.status) {
-            if(this.options.status == 'error') {
-                this.options.status = 'danger';
-            }
-
-            this.element.addClass('alert-'+this.options.status);
-            this.currentstatus = this.options.status;
+        if(this.options.status == 'error') {
+            this.options.status = 'danger';
         }
 
-        this.group = this.options.group;
+        this.element.addClass('alert-'+this.options.status);
+        this.currentstatus = this.options.status;
 
         messages[this.uuid] = this;
 
@@ -81,7 +70,6 @@
         element: false,
         timout: false,
         currentstatus: "",
-        group: false,
 
         show: function() {
 
@@ -138,44 +126,16 @@
             }
         },
 
-        content: function(html){
-
-            var container = this.element.find(">div");
-
-            if(!html) {
-                return container.html();
-            }
-
-            container.html(html);
-
-            return this;
-        },
-
-        status: function(status) {
-
-            if(!status) {
-                return this.currentstatus;
-            }
-
-            this.element.removeClass('notify-message-'+this.currentstatus).addClass('notify-message-'+status);
-
-            this.currentstatus = status;
-
-            return this;
-        }
     });
 
     Message.defaults = {
         message: "",
         status: "default",
         timeout: 5000,
-        group: null,
         pos: 'top-center',
         zIndex: 10400,
         onClose: function() {}
     };
-
-    $.notify = notify;
-
-    return notify;
+    
+    return $.notify = notify
 });

@@ -80,10 +80,10 @@
     <section id="usage" class="usage-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-3">
                     <h1>Usage</h1>
                     <p>
-                    	Include css and js files to your page first, don't forget to include jquery and bootsrap as well of course.
+                    	Include css and js files to your page first, don't forget to include jquery and bootsrap first.
                     	<br/>
                     	<br/>
                     	<code>
@@ -95,67 +95,67 @@
                     Example:
                     <br/>
                     <code>
-                    	$.notify('Message', 'error');
+                    	$.notify('This message is for you', 'error');
                     </code>
                     <h2>Syntax</h2>
                      <code> $.notify(message, status); </code>
                      <br/><var>message</var> is string, your message. Required.
                      <br/><var>status</var> is string, either 'default', 'info', 'warning', 'error' or 'success'.
                      <br/>
+                     <br/>
                      <code> $.notify(message, option); </code>
                      <br/><var>message</var> is string, your message. Required.
-                     <br/><var>option</var> is object, described on the right.
+                     <br/><var>option</var> is object, described below.
                      <br/>
                      <br/>
                      <code> $.notify(option); </code>
-                     <br/><var>option</var> is object. described on the right.
-                </div>
-                <div class="col-md-6">
-                    <h2>Options</h2>
-                    <table class="table">
-                        <tr>
-                            <th>Name</td>
-                            <th>Type</td>
-                            <th>Default</td>
-                            <th>Description</td>
-                        </tr>
-                        <tr>
-                            <td>message</td>
-                            <td>string</td>
-                            <td>''</td>
-                            <td>Your message</td>
-                        </tr>
-                        <tr>
-                            <td>status</td>
-                            <td>string('default', 'info', 'error', 'warning', 'success')</td>
-                            <td>default</td>
-                            <td>Alert status, affect styles</td>
-                        </tr>
-                        <tr>
-                            <td>Timeout</td>
-                            <td>integer</td>
-                            <td>5000</td>
-                            <td>Seconds until alert fading out</td>
-                        </tr>
-                        <tr>
-                            <td>pos</td>
-                            <td>string('top-center','top-right', 'bottom-right', 'bottom-center', 'bottom-left')</td>
-                            <td>top-center</td>
-                            <td>alert position</td>
-                        </tr>
-                        <tr>
-                            <td>zIndex</td>
-                            <td>integer</td>
-                            <td>10400</td>
-                            <td>z-index style for alert container</td>
-                        </tr>
-                        <tr>
-                            <td>onClose</td>
-                            <td>function</td>
-                            <td>none</td>
-                            <td>Function to call on alert close</td>
-                        </tr>
-                    </table>
+                     <br/><var>option</var> is object. described below.
+
+                     <h2>Options</h2>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Name</td>
+                                <th>Type</td>
+                                <th>Default</td>
+                                <th>Description</td>
+                            </tr>
+                            <tr>
+                                <td>message</td>
+                                <td>string</td>
+                                <td>''</td>
+                                <td>Your message</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>string('default', 'info', 'error', 'warning', 'success')</td>
+                                <td>default</td>
+                                <td>Alert status, affect styles</td>
+                            </tr>
+                            <tr>
+                                <td>Timeout</td>
+                                <td>integer</td>
+                                <td>5000</td>
+                                <td>Seconds until alert fading out</td>
+                            </tr>
+                            <tr>
+                                <td>pos</td>
+                                <td>string('top-center','top-right', 'bottom-right', 'bottom-center', 'bottom-left')</td>
+                                <td>top-center</td>
+                                <td>alert position</td>
+                            </tr>
+                            <tr>
+                                <td>zIndex</td>
+                                <td>integer</td>
+                                <td>10400</td>
+                                <td>z-index style for alert container</td>
+                            </tr>
+                            <tr>
+                                <td>onClose</td>
+                                <td>function</td>
+                                <td>none</td>
+                                <td>Function to call on alert close</td>
+                            </tr>
+                        </table>
                 </div>
             </div>
         </div>
@@ -166,7 +166,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="javascript:;" class="btn btn-lg btn-default">Download</a>
+                    <a href="https://github.com/egig/notify/archive/0.8.0.zip" class="btn btn-lg btn-default">Download v.0.8.0</a>
                 </div>
             </div>
         </div>
